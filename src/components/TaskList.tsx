@@ -120,7 +120,7 @@ export function TaskList() {
       </section>
       <footer>
         <p>
-          Feito com ❤️ por
+          Feito com ❤️ por{" "}
           <a href="https://www.linkedin.com/in/ruan-valente/">Ruan Valente</a>
           👋🏽
         </p>
