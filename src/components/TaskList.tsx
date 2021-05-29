@@ -1,14 +1,9 @@
 import { useEffect, useState } from "react";
 
 import "../styles/tasklist.scss";
+import { FiTrash } from "react-icons/fi";
 
-import { FiTrash, FiCheckSquare } from "react-icons/fi";
-
-interface Task {
-  id: number;
-  title: string;
-  isComplete: boolean;
-}
+import { Task } from "../types/task";
 
 export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>(() => {
@@ -23,7 +18,7 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState("");
 
   useEffect(() => {
-    localStorage.setItem("ignite::tasks", JSON.stringify(tasks));
+    window.localStorage.setItem("ignite::tasks", JSON.stringify(tasks));
   }, [tasks]);
 
   function handleCreateNewTask() {
@@ -67,7 +62,7 @@ export function TaskList() {
           <div className="input-group">
             <input
               type="text"
-              placeholder="Adicionar novo todo"
+              placeholder="Digite a sua tarefa"
               onChange={(e) => setNewTaskTitle(e.target.value)}
               value={newTaskTitle}
             />
@@ -76,7 +71,7 @@ export function TaskList() {
               data-testid="add-task-button"
               onClick={handleCreateNewTask}
             >
-              <FiCheckSquare size={16} color="#fff" />
+              Adicionar
             </button>
           </div>
         </header>
