@@ -1,10 +1,7 @@
-import React from 'react';
-import './App.css';
+import "./styles/global.scss";
 
 function App() {
-  return (
-    <div>Todo App</div>
-  );
+  return <div>Todo App</div>;
 }
 
 export default App;
